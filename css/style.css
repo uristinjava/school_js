@@ -312,6 +312,17 @@ header {
 
 .faq.open p {
     display: block;
+    animation: openBlock 1s linear forwards;
+}
+
+@keyframes openBlock {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .faq__icon {
@@ -329,6 +340,7 @@ header {
 
 .testimonial {
     padding-top: 2rem;
+    cursor: grab;
 }
 
 .avatar {
@@ -404,4 +416,203 @@ footer ul li:hover {
     margin-top: 4rem;
     padding: 1.2rem 0;
     border-top: 1px solid var(--color-bg2);
+}
+
+
+/* -----------------TABLETS----------------- */
+@media (max-width:1024px) {
+    .conteiner {
+        width: var(--conteiner-wbdth-md);
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+    }
+
+    nav button {
+        display: inline-block;
+        background: transparent;
+        font-size: 1.8rem;
+        color: var(--color-white);
+        cursor: pointer;
+    }
+
+    nav button#close-menu-btn {
+        display: none;
+    }
+
+    .nav__menu {
+        position: fixed;
+        top: 5rem;
+        right: 5%;
+        height: fit-content;
+        width: 18rem;
+        flex-direction: column;
+        gap: 0;
+        display: none;
+    }
+
+    .nav__menu li {
+        width: 100%;
+        height: 5.8rem;
+        animation: animateNavItems 400ms linear forwards;
+        animation-duration: 50ms;
+        transform-origin: top right;
+        opacity: 0;
+
+    }
+
+    .nav__menu li:nth-child(2) {
+        animation-duration: 200ms;
+    }
+
+    .nav__menu li:nth-child(3) {
+        animation-duration: 400ms;
+    }
+
+    .nav__menu li:nth-child(4) {
+        animation-duration: 600ms;
+    }
+
+    @keyframes animateNavItems {
+        0% {
+            transform: rotateZ(-90deg) rotateX(90deg) scale(0);
+        }
+
+        100% {
+            transform: rotateZ(0deg) rotateX(0deg) scale(1);
+            opacity: 1;
+        }
+    }
+
+    .nav__menu li a {
+        background: var(--color-primary);
+        box-shadow: -4rem 6rem 10rem rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    .nav__menu li a:hover {
+        background: var(--color-bg2);
+        color: var(--color-white);
+    }
+
+    header {
+        height: 52vh;
+        margin-bottom: 4rem;
+    }
+
+    .header__conteiner {
+        gap: 0;
+        padding-bottom: 3rem;
+    }
+
+    .cetegories {
+        height: auto;
+    }
+
+    .categories__conteiner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .categories__left {
+        margin-right: 0;
+    }
+
+    .courses {
+        margin-top: 0;
+    }
+
+    .courses__conteiner {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .faqs__conteiner {
+        grid-template-columns: 1fr;
+    }
+
+    .faq {
+        padding: 1.5rem;
+    }
+
+    .footer__conteiner {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .conteiner {
+        width: var(--conteiner-wudth-sm);
+    }
+
+    .nav__menu {
+        right: 3%;
+
+    }
+
+    header {
+        height: 100vh;
+    }
+
+    .header__conteiner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .header__left {
+        margin-bottom: 1.3rem;
+    }
+
+    .categories__right {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.7rem;
+    }
+
+    .category {
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+
+    .category__icon {
+        margin-top: 4px;
+        display: inline-block;
+    }
+
+    .courses__conteiner {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial__body {
+        padding: 1.2rem;
+    }
+
+    .footer__conteiner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer1 p {
+        margin: 1rem auto;
+    }
+
+    .footer__socials {
+        justify-content: center;
+    }
 }
