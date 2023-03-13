@@ -375,6 +375,11 @@ header {
     transform: rotate(45deg);
 }
 
+/* .swiper-pagination-bullet  */
+.swiper-pagination-bullet-active {
+    background: var(--color-success);
+}
+
 /* -----------------FOOTER----------------- */
 footer {
     background: var(--color-bg1);
